@@ -1,11 +1,12 @@
 ---
 import { getEntry, render } from "astro:content";
-import GiscusComments from "@components/GiscusComments.astro";
+import Giscus from "@components/misc/Giscus.astro";
 import Markdown from "@components/misc/Markdown.astro";
 import MainGridLayout from "@layouts/MainGridLayout.astro";
 import { Icon } from "astro-icon/components";
 import { siteConfig } from "../config";
 import { friends } from "../friends_data";
+
 
 // 获取友链说明内容
 const friendsPost = await getEntry("spec", "friends");
@@ -53,6 +54,13 @@ const { Content, headings } = await render(friendsPost);
             ))}
         </div>
 
+        <Giscus
+             repo="worhllo2/Blog-fuwari"
+             repoId="R_kgDOR4xu1A"
+             category="General"
+             categoryId="DIC_kwDOR4xu1M4C58lt"
+        />
+
         </div>
 </MainGridLayout>
 
@@ -83,3 +91,4 @@ const { Content, headings } = await render(friendsPost);
     border-color: rgba(75, 85, 99, 0.35);
 }
 </style>
+

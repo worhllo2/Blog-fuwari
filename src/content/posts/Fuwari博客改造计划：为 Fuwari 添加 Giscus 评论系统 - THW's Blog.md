@@ -247,7 +247,49 @@ import { formatDateToYYYYMMDD } from "../../utils/date-utils";
 </div>
 </div>
 ```
+3.  **添加到友链页面**
 
+在 `src/pages/friends.astro` 文件中：
+    
+    -   首先导入 Giscus 组件：
+    
+```javascript
+import { getEntry, render } from "astro:content";
+import Giscus from "@components/misc/Giscus.astro";
+import Markdown from "@components/misc/Markdown.astro";
+import MainGridLayout from "@layouts/MainGridLayout.astro";
+import { Icon } from "astro-icon/components";
+import { siteConfig } from "../config";
+import { friends } from "../friends_data";
+
+```
+    
+
+-   然后在友链卡片组件之后添加 Giscus 组件：
+
+```astro
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {friends.map((friend) => (
+                <a href={friend.url} target="_blank" rel="noopener noreferrer" class="friend-card">
+                    <div class="flex items-center gap-2">
+                        <img src={friend.avatar} loading="lazy" class="w-5 h-5 rounded" alt={friend.name}>
+                        <div class="font-bold text-black dark:text-white">{friend.name}</div>
+                    </div>
+                    <div class="text-sm text-black/50 dark:text-white/50">{friend.description}</div>
+                </a>
+            ))}
+        </div>
+
+        <Giscus
+             repo="worhllo2/Blog-fuwari"
+             repoId="R_kgDOR4xu1A"
+             category="General"
+             categoryId="DIC_kwDOR4xu1M4C58lt"
+        />
+
+        </div>
+</MainGridLayout>
+```
 保存文件后重新构建项目即可看到评论区
 
 通过以上步骤，你就成功为 **Fuwari** 添加了功能完善的评论系统，！🎉

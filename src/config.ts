@@ -49,20 +49,27 @@ export const navBarConfig: NavBarConfig = {
 			external: false, // Show an external link icon and will open in a new tab
 		},
 		{
-			name: "开往",
-			url: "https://www.travellings.cn/typewriter.html",
-			external: true, // Show an external link icon and will open in a new tab
-		},
-		{
-			name: "百宝箱",
-			url: "https://home.142587.de5.net", // Internal links should not include the base path, as it is automatically added
-			external: true, // Show an external link icon and will open in a new tab
-		},
-	    {
-			name: "GitHub",
-			url: "https://github.com/worhllo2/Blog-fuwari", // Internal links should not include the base path, as it is automatically added
-			external: true, // Show an external link icon and will open in a new tab
-		},
+      name: "其他", // 标题
+      url: "#", // 内部链接不应包含基本路径，因为它是自动添加的
+      children: [
+        {
+          name: "开往",
+          url: "https://www.travellings.cn/typewriter.html", // 内部链接不应包含基本路径，因为它是自动添加的
+          external: true, //显示外部链接图标，并将在新选项卡中打开
+        },
+        {
+			    name: "GitHub",
+			    url: "https://github.com/worhllo2/Blog-fuwari", // Internal links should not include the base path, as it is automatically added
+			    external: true, // Show an external link icon and will open in a new tab
+		    },
+        {
+          name: "百宝箱",
+          url: "https://home.142587.de5.net", // 内部链接不应包含基本路径，因为它是自动添加的
+          external: true, //显示外部链接图标，并将在新选项卡中打开
+        },
+      ],
+    },
+		    
 	],
 };
 

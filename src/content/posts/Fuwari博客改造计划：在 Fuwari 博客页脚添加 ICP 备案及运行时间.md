@@ -101,6 +101,27 @@ import { url } from '../utils/url-utils'
 </div>
 ```
 
+
+## ⚠️ 常见问题：构建失败 (expand-animation)
+
+如果在部署到 Cloudflare Pages 或进行 Vite 构建时遇到类似以下的错误：
+`[postcss] /src/styles/markdown.css:23:9: The expand-animation class does not exist.`
+
+### 错误原因
+这是因为 Fuwari 主题在 `markdown.css` 中使用了 Tailwind 的 `@apply` 指令来引用 `expand-animation` 类，但该类定义在 `main.css` 中。在某些构建环境下，PostCSS 无法跨文件识别非原生的 Tailwind 类。
+
+### 解决方案
+在 `src/styles/markdown.css` 文件的顶部（不要放在任何大括号内），手动添加该类的定义：
+
+```css
+.expand-animation {
+    @apply relative before:ease-out before:transition active:bg-none hover:before:bg-[var(--btn-plain-bg-hover)] active:before:bg-[var(--btn-plain-bg-active)] z-0
+    before:absolute before:rounded-[inherit] before:inset-0 before:scale-[0.85] hover:before:scale-100 before:-z-10;
+}
+```
+
+注意：不要在外面包裹 `@layer components`，除非你在该文件顶部也引入了 `@tailwind components`。
+
 ### 💡 转载说明
 > **本文转载自：** [AULyPc 的博客](https://aulypc1.github.io/)  
 > **原文作者：** [AULyPc](https://aulypc1.github.io/about/)  

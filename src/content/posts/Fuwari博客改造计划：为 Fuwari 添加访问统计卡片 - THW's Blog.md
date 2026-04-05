@@ -4,7 +4,7 @@ published: 2026-03-30
 description: '本文详细介绍了如何通过 Umami API 获取站点数据，并为 Fuwari 主题自定义开发一个优雅的侧边栏访问统计组件。'
 image: ''
 tags: ['Fuwari', 'Astro', 'Umami', '博客优化']
-category: '技术专栏'
+category: '博客改造'
 ai: '本文介绍了集成 Umami 统计 API 的具体代码实现与组件配置过程。'
 draft: false 
 lang: 'zh-CN'

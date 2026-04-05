@@ -1,0 +1,96 @@
+---
+---
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js"></script>
+
+<div class="pb-4 card-base">
+    <div class="font-bold transition text-lg text-neutral-900 dark:text-neutral-100 relative ml-8 mt-4 mb-2
+      before:w-1 before:h-4 before:rounded-md before:bg-[var(--primary)]
+      before:absolute before:left-[-16px] before:top-[5.5px]">
+        音乐
+    </div>
+
+    <div class="px-4" id="music-player-container"></div>
+</div>
+
+<script is:inline>
+// 全局变量存储播放器实例
+window.musicPlayerInstance = null;
+
+// 确保只初始化一次播放器
+function initMusicPlayer() {
+    // 先销毁已存在的实例
+    if (window.musicPlayerInstance) {
+        try {
+            window.musicPlayerInstance.destroy();
+        } catch (e) {
+            console.log('销毁旧播放器实例:', e);
+        }
+        window.musicPlayerInstance = null;
+    }
+
+    // 清除容器内容
+    const container = document.getElementById('music-player-container');
+    if (!container) return;
+    container.innerHTML = '';
+
+    // 创建新的meting-js元素
+    const metingElement = document.createElement('meting-js');
+    // metingElement.setAttribute('api', 'https://api.i-meto.com/meting/api?server=:server&type=:type&id=:id'); // 可选：指定 API
+    metingElement.setAttribute('server', 'netease');
+    metingElement.setAttribute('type', 'playlist');
+    metingElement.setAttribute('id', '2501170701'); // 这是一个默认歌单 ID，可以修改
+    metingElement.setAttribute('fixed', 'false');
+    metingElement.setAttribute('autoplay', 'false');
+    metingElement.setAttribute('theme', '#25c6fc');
+    metingElement.setAttribute('loop', 'all');
+    metingElement.setAttribute('order', 'list');
+    metingElement.setAttribute('preload', 'auto');
+    metingElement.setAttribute('list-folded', 'true');
+    metingElement.setAttribute('list-max-height', '300px');
+
+    container.appendChild(metingElement);
+
+    // 手动初始化并存储实例
+    if (typeof window.Meting === 'function') {
+        window.Meting(metingElement);
+    }
+
+    // 获取APlayer实例并存储
+    let retryCount = 0;
+    const maxRetries = 10;
+    const checkAPlayer = () => {
+        const aplayerElement = container.querySelector('.aplayer');
+        if (aplayerElement && aplayerElement.aplayer) {
+            window.musicPlayerInstance = aplayerElement.aplayer;
+        } else if (retryCount < maxRetries) {
+            retryCount++;
+            setTimeout(checkAPlayer, 200);
+        }
+    };
+    checkAPlayer();
+}
+
+// 页面加载时初始化
+document.addEventListener('DOMContentLoaded', initMusicPlayer);
+
+// Astro页面切换时重新初始化
+document.addEventListener('astro:page-load', initMusicPlayer);
+
+// Swup路由切换时清理并重新初始化
+if (window.swup) {
+    window.swup.hooks.on('content:replace', () => {
+        if (window.musicPlayerInstance) {
+            try {
+                window.musicPlayerInstance.destroy();
+            } catch (e) {
+                console.log('Swup切换时销毁播放器:', e);
+            }
+            window.musicPlayerInstance = null;
+        }
+    });
+
+    window.swup.hooks.on('page:view', initMusicPlayer);
+}
+</script>

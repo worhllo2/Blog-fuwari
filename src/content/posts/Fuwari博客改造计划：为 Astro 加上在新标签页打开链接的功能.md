@@ -4,7 +4,7 @@ published: 2026-03-31
 description: '原版 Astro（包括 Fuwari）中，打开外部链接默认在当前页面。本文教你如何配置 rehype-external-links 插件，让链接自动在新标签页打开。'
 image: 'https://imgbed.142588.xyz/file/1775016215240_cover_164185.png'
 tags: ['Astro', 'Fuwari', '插件', '教程']
-category: '技术专栏'
+category: '博客改造'
 ai: '本文针对 Astro 框架（以 Fuwari 主题为例）默认不支持新标签页打开外部链接的问题，提供了详细的解决方案。通过安装并配置 rehype-external-links 插件，开发者可以自动为所有外部链接添加 target="_blank" 属性，从而提升用户阅读体验，避免页面跳转导致的内容丢失。'
 draft: false 
 lang: 'zh-CN'

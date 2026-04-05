@@ -4,7 +4,7 @@ published: 2026-03-31
 description: '手把手教你如何在基于 Astro 架构的 Fuwari 主题中配置并安装基于 GitHub Discussions 的 Giscus 评论系统。'
 image: 'https://imgbed.142588.xyz/file/1775016654986_image.png'
 tags: ['Giscus', 'Astro', 'Fuwari', '评论插件']
-category: '技术专栏'
+category: '博客改造'
 ai: '本文详细介绍了为静态博客集成 Giscus 评论插件的全过程。内容涵盖 GitHub 仓库 Discussions 功能的开启、Giscus App 的安装与授权、专用配置代码的获取，以及如何在 Astro 架构下（特别是 Fuwari 主题）精准插入 JS 脚本。此外，文章还分享了通过 giscus.json 配置域名白名单以防止评论污染的进阶技巧。'
 draft: false 
 lang: 'zh-CN'

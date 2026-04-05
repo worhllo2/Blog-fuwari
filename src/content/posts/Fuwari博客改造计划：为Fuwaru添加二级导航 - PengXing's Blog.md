@@ -4,7 +4,7 @@ published: 2026-03-30
 description: '为 Fuwari 主题添加二级导航支持，实现桌面端悬停展开与移动端点击切换功能。'
 image: ''
 tags: ['Astro', 'Fuwari', '前端开发', '博客改造']
-category: '技术专栏'
+category: '博客改造'
 ai: '本文详细介绍了如何通过修改源码为 Astro 的 Fuwari 主题增加二级菜单嵌套功能。'
 draft: false 
 lang: 'zh-CN'

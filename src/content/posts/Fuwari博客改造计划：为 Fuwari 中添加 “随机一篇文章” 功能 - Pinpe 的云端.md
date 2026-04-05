@@ -3,7 +3,7 @@ title: 在 Fuwari 中添加 “随机一篇文章” 功能
 published: 2026-03-30
 description: 本教程介绍如何在 Fuwari 博客中添加一个置顶的随机文章卡片，通过 Astro 组件和客户端脚本实现自动跳转，提升旧文章的曝光率
 tags: [Astro, Fuwari, 博客美化, 前端开发]
-category: 技术专栏
+category: '博客改造'
 draft: false
 ---
 

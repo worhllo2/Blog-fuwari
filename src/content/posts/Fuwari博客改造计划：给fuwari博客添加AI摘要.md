@@ -4,7 +4,7 @@ published: 2026-03-30
 description: ''
 image: 'https://imgbed.142588.xyz/file/1774867728533_image.png'
 tags: ['Netlify','Fuwari']
-category: '技术专栏'
+category: '博客改造'
 ai: '本文详细介绍了如何为 Fuwari 博客集成 AI 摘要功能。通过新建 AISummary 组件、修改内容 Schema 配置、在文章详情页插入组件以及配置相应的 CSS 样式和 Stylus 变量，读者可以轻松实现具有打字机动画效果的 AI 总结模块。'
 draft: false 
 lang: ''

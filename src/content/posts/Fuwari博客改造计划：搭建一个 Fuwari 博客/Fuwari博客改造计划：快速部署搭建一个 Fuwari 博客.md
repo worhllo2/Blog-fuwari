@@ -4,7 +4,7 @@ published: 2026-03-30
 description: '手把手教你如何使用 Astro 与 Fuwari 模板快速构建一个极简且优雅的静态博客，并实现 Netlify 一键部署。'
 image: './cover.jpeg'
 tags: ['Fuwari', 'Netlify', 'Astro', '教程']
-category: '技术专栏'
+category: '博客改造'
 ai: '本文提供了基于 Fuwari 主题搭建个人博客的完整工作流。内容涵盖 Node.js 环境准备、使用 pnpm 初始化项目、修改 src/config.ts 进行个性化配置，以及通过 Netlify CLI 实现自动化部署。旨在帮助开发者以最低成本拥有一个高性能的静态站点。'
 draft: false 
 lang: 'zh-CN'

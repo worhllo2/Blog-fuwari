@@ -4,7 +4,7 @@ published: 2026-03-30
 description: '一份关于如何使用 Fuwari 博客模板的简略指南，涵盖文章元数据、Markdown 语法扩展、代码高亮及视频嵌入等功能。'
 image: ''
 tags: ['Fuwari', 'Astro', 'Markdown', '教程']
-category: '技术专栏'
+category: '博客改造'
 ai: '本文详细介绍了基于 Astro 构建的 Fuwari 模板的使用方法，重点讲解了 Front-matter 配置、GitHub 仓库卡片、提示框组件以及 Expressive Code 代码块的高级用法。'
 draft: false 
 lang: 'zh-CN'

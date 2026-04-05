@@ -4,7 +4,7 @@ published: 2026-03-30
 description: '本文将逐步说明如何通过修改 src/content/config.ts 和 src/utils/content-utils.ts 实现 Fuwari 博客的文章置顶（Top）与置底（Bottom）功能。'
 image: ''
 tags: ['Fuwari', '功能增强', 'Astro', '博客维护']
-category: '技术专栏'
+category: '博客改造'
 ai: '本文介绍了通过扩展 Astro 内容配置字段并调整排序逻辑，为 Fuwari 博客增加 order 属性以实现文章手动置顶或置底的方法。'
 draft: false 
 lang: 'zh-CN'

@@ -3,7 +3,7 @@ title: Fuwari 博客改造计划：如何使用 Expressive Code
 published: 2026-04-03
 description: 探索如何在 Markdown 中使用 Expressive Code 增强代码块显示效果。
 tags: [Markdown, 博客, 教程]
-category: 教程
+category: '博客改造'
 draft: false
 ---
 
